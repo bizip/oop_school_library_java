@@ -5,12 +5,14 @@ import java.util.List;
 
 public class Person {
 	private int id;
+	private String type;
 	private String name;
 	private int age;
 	private boolean parentPermission;
 	private List<Rental> rentals;
 
-	public Person(int id, int age, boolean parentPermission, String name) {
+	public Person(String type, int id, int age, boolean parentPermission, String name) {
+		this.setType(type);
 		this.id = id;
 		this.age = age;
 		this.parentPermission = parentPermission;
@@ -19,8 +21,8 @@ public class Person {
 
 	}
 
-	public Person(int id, int age) {
-		this(id, age, true, "Unknown");
+	public Person(String type, int id, int age) {
+		this(type,id, age, true, "Unknown");
 	}
 
 	public int getId() {
@@ -61,5 +63,13 @@ public class Person {
 
 	public void addRentals(Rental rental) {
 		this.rentals.add(rental);
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }

@@ -11,14 +11,14 @@ public class App {
     private List<Person> people;
     private List<Rental> rentals;
     private int nextPersonId;
-    private int nextBookId;
+//    private int nextBookId;
 
     public App() {
         this.books = new ArrayList<Book>();
         this.people = new ArrayList<Person>();
         this.rentals = new ArrayList<Rental>();
         this.nextPersonId = 1;
-        this.nextBookId = 1;
+//        this.nextBookId = 1;
     }
     
     public void listAllBooks() {
@@ -28,9 +28,18 @@ public class App {
     }
     
     public void listAllPeople() {
+    	System.out.println("List of all people");
+    	System.out.println("--------------------");
     	for (Person people : this.people) {
+    		System.out.println(people.getClass().getSimpleName());
+    	}
+    }
+    
+    
+    public void listAllRentals() {
+    	for (Rental rental : this.rentals) {
     		System.out.println("List of al peoples");
-    		System.out.println("_" + people);
+    		System.out.println("_" + rental);
     	}
     }
     
@@ -40,15 +49,9 @@ public class App {
         if (type.equals("teacher")) {
             person = new Teacher(id, age, parentPermission,  name, specialization);
         } else {
-            person = new Student(name, age, parentPermission, id, classroom);
+            person = new Student(123, 18, true, "John Doe", classroom, "undergraduate");
         }
         this.people.add(person);
-    }
-    
-    public void createBook(String title, String author) {
-        int id = this.nextBookId++;
-        Book book = new Book(title, author);
-        this.books.add(book);
     }
 
 }

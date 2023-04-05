@@ -7,8 +7,8 @@ public class Student extends Person{
 	private Classroom classroom;
 	
 
-	public Student(String name, int age, boolean parentPermission, int id, Classroom classroom ) {
-		super( id, age,parentPermission, name);
+	public Student(int id,  int age, boolean parentPermission,String name,  Classroom classroom,String type ) {
+		super(type,id, age,parentPermission, name);
 		this.classroom = classroom;
 	}
 	
