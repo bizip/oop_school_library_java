@@ -11,7 +11,7 @@ public class Book {
 	public Book(String title, String author) {
 		this.title = title;
 		this.author = author;
-		this.setRentals(new ArrayList<>());
+		this.rentals=new ArrayList<>();
 	}
 
 	public String getTitle() {
