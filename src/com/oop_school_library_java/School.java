@@ -1,55 +1,60 @@
 package com.oop_school_library_java;
 
-import com.oop_school_library_java.Teacher.Teacher;
+import java.util.Scanner;
 
 public class School {
+	private static final Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		App app = new App();
 		System.out.println("Welcome to school libraly app!");
 		System.out.println("================================");
 		System.out.println("");
-		System.out.println("Welcome to school libraly app!");
-		
-//		create a new student
-//		Classroom mathClassroom = new Classroom("Chemistry 101");
-//		Student student = new Student("John Smith", 16, true, 1234, mathClassroom);
-//		Student student1 = new Student("John Smith", 16, true, 1234, mathClassroom);
-		
-//		List all students
-//		System.out.println(student);	
-//		System.out.println(student1);
-		
-//		create the teacher
-		Teacher teacher1 = new Teacher(1, 35, true, "Jane Smith", "Math");
-		Teacher teacher2 = new Teacher(2, 42, true, "John Doe", "English");
-		
-//		List all students
-		System.out.println("List of teachers");
-		System.out.println("");
-		System.out.println(teacher1);	
-		System.out.println(teacher2);
-		
-		
-//		create new book
-		
-		Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald");
-		Book book2 = new Book("To Kill a Mockingbird", "Harper Lee");
-//	    list all books
-		System.out.println("List of Books");
-		System.out.println("");
-		System.out.println(book1);	
-		System.out.println(book2);
-//		create a new class
-		System.out.println("List of classrooms");
-		System.out.println("");
-		Classroom classroom1 = new Classroom("Chemistry 101");
-		System.out.println(classroom1.getClass().getSimpleName());
-		
-//		create a person
-		app.createPerson("teacher",20, true, "name","specialization", classroom1);
-		app.createPerson("student",20, true, "name","specialization", classroom1);
-		app.listAllPeople();
 
+		boolean quit = false;
+
+		while (!quit) {
+			System.out.println("\nPlease choose the option by intering a number:");
+			System.out.println("1. List all books");
+			System.out.println("2. List all people");
+			System.out.println("3. Create a person");
+			System.out.println("4. Create a book");
+			System.out.println("5. Create a rental");
+			System.out.println("6. List all rentals for a given person id");
+			System.out.println("0. Quit");
+
+			int choice = scanner.nextInt();
+			scanner.nextLine();
+
+			switch (choice) {
+			case 0:
+				quit = true;
+				break;
+			case 1:
+
+				break;
+			case 2:
+				app.listAllPeople();
+				break;
+			case 3:
+				Classroom classroom1 = new Classroom("Chemistry 101");
+				app.createPerson("teacher", 20, true, "name", "specialization", classroom1);
+				app.createPerson("student", 20, true, "name", "specialization", classroom1);
+
+				break;
+			case 4:
+
+				break;
+			case 5:
+
+				break;
+			case 6:
+
+				break;
+			default:
+				System.out.println("Invalid option, please select again.");
+			}
+		}
 	}
+
 }

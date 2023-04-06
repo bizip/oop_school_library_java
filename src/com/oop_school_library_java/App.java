@@ -31,7 +31,7 @@ public class App {
     	System.out.println("List of all people");
     	System.out.println("--------------------");
     	for (Person people : this.people) {
-    		System.out.println(people.getClass().getSimpleName());
+    		System.out.println("[" + people.getClass().getSimpleName() + "]" +" " + "name:"+ " "  + people.getName() );
     	}
     }
     
