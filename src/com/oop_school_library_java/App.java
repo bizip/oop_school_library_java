@@ -1,5 +1,6 @@
 package com.oop_school_library_java;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,19 +12,19 @@ public class App {
     private List<Person> people;
     private List<Rental> rentals;
     private int nextPersonId;
-//    private int nextBookId;
 
     public App() {
         this.books = new ArrayList<Book>();
         this.people = new ArrayList<Person>();
         this.rentals = new ArrayList<Rental>();
         this.nextPersonId = 1;
-//        this.nextBookId = 1;
     }
     
     public void listAllBooks() {
+    	System.out.println("List of all books");
+    	System.out.println("--------------------");
         for (Book book : this.books) {
-            System.out.println(book);
+            System.out.println(book.getTitle() + " " + "by" + " " + book.getAuthor());
         }
     }
     
@@ -52,6 +53,19 @@ public class App {
             person = new Student(123, 18, true, "John Doe", classroom, "undergraduate");
         }
         this.people.add(person);
+    }
+    
+    public void createBook(String title,String author ) {
+    Book book;
+    book = new Book(title,author);
+    this.books.add(book);
+    }
+    
+    public void createRental(LocalDate date, Person person, Book book) {
+    	Rental rental;
+    	rental = new Rental(date, person, book);
+    	this.rentals.add(rental);
+    	
     }
 
 }

@@ -31,7 +31,7 @@ public class School {
 				quit = true;
 				break;
 			case 1:
-
+				app.listAllBooks();
 				break;
 			case 2:
 				app.listAllPeople();
@@ -43,7 +43,7 @@ public class School {
 
 				break;
 			case 4:
-
+				app.createBook("Who moved my cheese", "Bizimungu Pascal");
 				break;
 			case 5:
 
