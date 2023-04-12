@@ -1,13 +1,12 @@
 package com.oop_school_library_java;
 
-import java.time.LocalDate;
 
 public class Rental {
 	private Person person;
 	private Book book;
-	private LocalDate date = LocalDate.now();
+	private String date = "01/01/2023";
 
-	public Rental(LocalDate date, Person person, Book book) {
+	public Rental(String date, Person person, Book book) {
 		this.date = date;
 		this.setPerson(person);
 		this.setBook(book);
@@ -15,11 +14,11 @@ public class Rental {
         this.person.addRentals(this);
 	}
 
-	public LocalDate getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
